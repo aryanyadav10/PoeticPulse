@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { Auth0Provider } from "@auth0/auth0-react";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Auth0Provider
+      domain="dev-wmc1wd6ozsjxqoy5.us.auth0.com"
+      clientId="xpHFJ3vfcegGEuUZtnKsyc6a39UtJi51"
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+      }}
+    >
+      <div style={{ overflow: "hidden", height: "100vh" }}>
+        <div
+          style={{
+            overflowY: "scroll",
+            height: "100%",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+          }}
+        >
+          <App />
+        </div>
+      </div>
+    </Auth0Provider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
