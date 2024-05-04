@@ -11,7 +11,7 @@ connectDB();
 app.use(bodyParser.json());
 
 const corsOptions = {
-  origin: "https://poetic-pulse.vercel.app/",
+  origin: "https://poetic-pulse-siio.vercel.app/",
   methods: "GET,POST,DELETE,PUT",
   allowedHeaders: "Content-Type,Authorization",
 };
